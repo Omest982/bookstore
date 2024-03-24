@@ -1,0 +1,43 @@
+syntax = "proto3";
+package com.example.grpc;
+option java_multiple_files = true;
+option java_package = "com.example.grpc.service";
+
+message BookDetails {
+  string title = 1;
+  string author = 2;
+  string isbn = 3;
+  int32 quantity = 4;
+}
+
+message BookId {
+  string id = 1;
+}
+
+message FullBookInfo {
+  string id = 1;
+  BookDetails bookDetails = 2;
+}
+
+message BookCreateRequest {
+  BookDetails bookDetails = 1;
+}
+
+message BookUpdateRequest {
+  FullBookInfo fullBookInfo = 1;
+}
+
+message DeleteResponse {
+  bool response = 1;
+}
+
+message FullBookInfoResponse {
+  FullBookInfo fullBookInfo = 1;
+}
+
+service BookService {
+  rpc addBook(BookCreateRequest) returns (BookId);
+  rpc getBookById(BookId) returns (FullBookInfoResponse);
+  rpc updateBook(BookUpdateRequest) returns (BookId);
+  rpc deleteBookById(BookId) returns (DeleteResponse);
+}
