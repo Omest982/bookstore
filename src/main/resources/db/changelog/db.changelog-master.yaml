@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Ivan
+      changes:
+        - sql: |
+            CREATE TABLE book (
+                id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                title VARCHAR(255),
+                author VARCHAR(255),
+                isbn VARCHAR(255),
+                quantity INTEGER
+            );

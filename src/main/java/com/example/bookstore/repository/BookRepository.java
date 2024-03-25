@@ -1,9 +1,11 @@
 package com.example.bookstore.repository;
 
 import com.example.bookstore.model.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.r2dbc.repository.R2dbcRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-public interface BookRepository extends JpaRepository<Book, UUID> {
+@Repository
+public interface BookRepository extends R2dbcRepository<Book, UUID> {
 }

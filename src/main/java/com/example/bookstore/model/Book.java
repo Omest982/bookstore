@@ -1,10 +1,8 @@
 package com.example.bookstore.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.UUID;
 
@@ -15,10 +13,9 @@ import java.util.UUID;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String title;
     private String author;
