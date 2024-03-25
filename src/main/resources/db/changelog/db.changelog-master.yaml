@@ -3,7 +3,7 @@ databaseChangeLog:
       id: 1
       author: Ivan
       changes:
-        - sql: |
+        - sql:
             CREATE TABLE book (
                 id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
                 title VARCHAR(255),
