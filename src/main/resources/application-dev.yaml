@@ -12,3 +12,7 @@ spring:
 
 server:
   port: ${APPLICATION_PORT}
+
+grpc:
+  server:
+    port: ${GRPC_PORT}
