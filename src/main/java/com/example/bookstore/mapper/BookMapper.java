@@ -7,8 +7,12 @@ import com.example.grpc.service.BookUpdateRequest;
 import com.example.grpc.service.FullBookInfoResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.NullValueCheckStrategy;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",
+        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface BookMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(source = "bookDetails.title", target = "title")
@@ -16,6 +20,7 @@ public interface BookMapper {
     @Mapping(source = "bookDetails.isbn", target = "isbn")
     @Mapping(source = "bookDetails.quantity", target = "quantity")
     Book bookCreateRequestToBook(BookCreateRequest bookCreateRequest);
+
     BookId bookToBookId(Book book);
 
     @Mapping(source = "id", target = "fullBookInfo.id")

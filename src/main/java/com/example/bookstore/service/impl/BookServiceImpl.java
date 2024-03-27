@@ -52,8 +52,15 @@ public class BookServiceImpl extends BookServiceGrpc.BookServiceImplBase {
                     responseObserver.onNext(bookMapper.bookToBookId(entity));
 
                     responseObserver.onCompleted();
-        },
-                responseObserver::onError
+                },
+                error ->{
+                    responseObserver.onError(
+                            Status.INTERNAL
+                                    .withDescription(error.getMessage())
+                                    .withCause(error)
+                                    .asRuntimeException()
+                    );
+                }
         );
     }
 
