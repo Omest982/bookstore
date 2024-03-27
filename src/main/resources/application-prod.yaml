@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://db-1.cnqy6ego42fw.eu-north-1.rds.amazonaws.com/book_management
+    username: postgres
+    password: postgres
+  liquibase:
+    url: jdbc:postgresql://db-1.cnqy6ego42fw.eu-north-1.rds.amazonaws.com/book_management
+    user: postgres
+    password: postgres
+
+server:
+  port: 8080
