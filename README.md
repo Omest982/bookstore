@@ -1,5 +1,20 @@
 <h2 align="center">📕Book managment system📕</h2>
 
+## 👩‍💻 Technologies Used
+* ☕ Java 17
+* 🌱 Spring Boot
+* Spring WebFlux
+* 🌱🛢️ Spring Data R2DBC
+* 🐘 PostgreSQL
+* 🛢️ Liquibase
+* 🐋 Docker
+* 🧰 TestContainers
+* 🌶️ Lombok
+* Gradle
+* gRPC
+* Protobuf
+* MapStruct
+
 ## ❓ How to use
 `Before running the Booking app, ensure you have the following installed:`
 
